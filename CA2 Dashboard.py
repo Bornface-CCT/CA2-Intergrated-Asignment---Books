@@ -5,7 +5,18 @@ import numpy as np
 
 # Dashboard Title
 st.title("Book Recommendation Dashboard")
-st.subheader("Dashboard Designed for Adults Senior Citizens")
+st.subheader("Dashboard Designed for Senior Citizens")
+
+DATE_COLUMN = 'date/time'
+DATA = ('books.csv')
+
+def load_data(nrows):
+    data=pd.read_csv(books.csv)
+    lowercase=lamba x:str(x).lower()
+    data.rename(lowercase, axis='columns', inplace=True)
+    data[DATE_COLUMN]=pd.to_datetime(data[DATE_COLUMN])
+    return data
+    
 
 # Large Font Styling
 st.markdown(
